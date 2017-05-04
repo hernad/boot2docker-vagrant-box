@@ -16,7 +16,7 @@
         "headless" : "{{ user `headless`}}",
         "boot_wait": "5s",
         "guest_additions_mode": "disable",
-        "guest_additions_path", "disable",
+        "guest_additions_path":, "disable",
         "guest_os_type": "Linux_64",
         "ssh_username": "docker",
         "ssh_password": "test01",
