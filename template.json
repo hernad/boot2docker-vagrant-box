@@ -15,12 +15,13 @@
             ["modifyvm","{{.Name}}","--memory","1536"],
             ["modifyvm","{{.Name}}","--nictype1","virtio"]
          ],
+        "guest_additions_mode": "disable",
         "disk_size": "120000",
         "iso_url": "{{user `url`}}",
         "iso_checksum": "{{user `checksum`}}",
         "iso_checksum_type": "{{user `checksum_type`}}",
         "headless" : "{{ user `headless`}}",
-        "boot_wait": "3m30s",
+        "boot_wait": "0m30s",
         "guest_os_type": "Linux_64",
         "ssh_username": "docker",
         "ssh_password": "test01",
@@ -38,7 +39,7 @@
       {
         "type":   "shell",
          "inline": [ "echo 'Hello World!'"]
-      }, 
+      },
       {
       "type": "shell",
       "inline": [ "echo 'end'" ]
