@@ -38,7 +38,7 @@
       },
       {
         "type":   "shell",
-         "inline": [ "echo 'Hello World!'"]
+         "inline": [ "cd /home/docker", "echo 'Hello World!'", "sudo zfs list", "find  /" ]
       },
       {
       "type": "shell",
