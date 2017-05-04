@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.ssh.shell = "sh"
   config.ssh.username = "docker"
-  config.ssh.password = "tcuser"
+  config.ssh.password = "test01"
 
   # Disable synced folders because guest additions aren't available
   config.vm.synced_folder ".", "/vagrant", disabled: true

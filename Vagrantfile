@@ -13,11 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "chef/ubuntu-12.04-i386"
 
   config.vm.provider "virtualbox" do |v|
-    v.customize ["modifyvm", :id, "--memory", "1500"]
+    v.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
-  config.vm.provider "parallels" do |v, override|
-    override.vm.box = "parallels/ubuntu-12.04"
-    v.memory = 1500
-  end
 end
