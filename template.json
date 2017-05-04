@@ -41,17 +41,6 @@
         "include": ["greenbox.iso"],
         "vagrantfile_template": "vagrantfile.tpl",
         "output": "greenbox_{{.Provider}}.box"
-    },
-    {
-        "type": "atlas",
-        "only": ["virtualbox-iso"],
-        "artifact": "hashicorp/boot2docker",
-        "artifact_type": "vagrant.box",
-        "metadata": {
-            "provider": "virtualbox",
-            "version": "{{user `version`}}.{{user `number`}}",
-            "description": "boot2docker v{{user `version`}}. The last part of the version is just a build number we increment as we make patch changes to the Vagrant box."
-        }
     }]]
 
 }
