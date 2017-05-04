@@ -16,6 +16,6 @@ rm -rf "/home/docker/VirtualBox VMs/${IMG}"
 
 
 chmod +x packer
-./packer build -debug -var 'headless=true' -only=virtualbox-iso template.json
+./packer build -var 'headless=true' -only=virtualbox-iso template.json
 
 mv ${IMG}_virtualbox.box ${IMG}_$(date +"%Y-%m-%d").box
