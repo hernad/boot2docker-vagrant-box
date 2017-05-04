@@ -1,12 +1,16 @@
 {
     "variables": {
-        "url": "http://download.bring.out.ba/greenbox.iso",
-        "version": "4.0.0"
+        "url": "http://download.bring.out.ba/greenbox-4.1.0.iso",
+        "checksum": "52c6849b59a835022be8bcadb7012f36903aaee9b97ba693e8976317dd6579f9",
+        "checksum_type": "sha256",
+        "version": "4.1.0"
     },
 
     "builders": [{
         "type": "virtualbox-iso",
         "iso_url": "{{user `url`}}",
+        "iso_checksum": "{{user `checksum`}}",
+        "iso_checksum_type": "{{user `checksum_type`}}",
         "boot_wait": "5s",
         "guest_additions_mode": "attach",
         "guest_os_type": "Linux_64",
