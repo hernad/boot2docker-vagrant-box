@@ -27,7 +27,6 @@
         "ssh_password": "test01",
         "output_directory": "packer-{{user `template`}}-virtualbox",
         "vm_name": "{{ user `template` }}",
-        "virtualbox_version_file": ".vbox_version",
         "shutdown_command": "sudo poweroff"
     }],
 
