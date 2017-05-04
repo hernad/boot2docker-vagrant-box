@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Expose the Docker port
-  config.vm.network "forwarded_port", guest: 2375, host: 2375,
+  config.vm.network "forwarded_port", guest: 2376, host: 2376,
     host_ip: "127.0.0.1", auto_correct: true, id: "docker"
 
   # b2d doesn't support NFS

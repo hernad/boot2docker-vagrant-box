@@ -23,7 +23,7 @@
         "headless" : "{{ user `headless`}}",
         "boot_wait": "0m30s",
         "guest_os_type": "Linux_64",
-        "ssh_username": "xdocker",
+        "ssh_username": "docker",
         "ssh_password": "test01",
         "output_directory": "packer-{{user `template`}}-virtualbox",
         "vm_name": "{{ user `template` }}",
