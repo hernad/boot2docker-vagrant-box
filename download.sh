@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-FILENAME="boot2docker.iso"
+FILENAME="greenbox.iso"
 URL="$1"
 CHECKSUM="$2"
 
