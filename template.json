@@ -30,8 +30,8 @@
           "sudo chown root:root /mnt/sda/var/lib/boot2docker/profile",
           "sync"
       ]
-    },
- 
+    }],
+
     "post-processors": [[{
         "type": "vagrant",
         "include": ["greenbox.iso"],
