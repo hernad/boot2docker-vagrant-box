@@ -20,7 +20,7 @@
         "iso_checksum": "{{user `checksum`}}",
         "iso_checksum_type": "{{user `checksum_type`}}",
         "headless" : "{{ user `headless`}}",
-        "boot_wait": "5s",
+        "boot_wait": "5m30s",
         "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
         "guest_additions_mode": "disable",
         "guest_os_type": "Linux_64",
