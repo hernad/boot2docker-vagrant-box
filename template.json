@@ -5,6 +5,7 @@
         "checksum_type": "sha256",
         "version": "4.1.0",
         "headless": "true",
+        "box_basename": "greenbox",
         "template": "greenbox"
     },
 
@@ -20,12 +21,14 @@
         "iso_checksum_type": "{{user `checksum_type`}}",
         "headless" : "{{ user `headless`}}",
         "boot_wait": "5s",
+        "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
         "guest_additions_mode": "disable",
-        "guest_additions_path": "disable",
         "guest_os_type": "Linux_64",
         "ssh_username": "docker",
         "ssh_password": "test01",
         "output_directory": "packer-{{user `template`}}-virtualbox",
+        "vm_name": "{{ user `template` }}"
+        "virtualbox_version_file": ".vbox_version",
         "shutdown_command": "sudo poweroff"
     }],
 
@@ -53,6 +56,7 @@
      ],
 
     "post-processors": [[{
+        "output": "builds/{{user `box_basename`}}.{{.Provider}}.box",
         "type": "vagrant",
         "include": ["greenbox.iso"],
         "vagrantfile_template": "vagrantfile.tpl",
