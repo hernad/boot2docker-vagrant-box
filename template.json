@@ -10,6 +10,11 @@
 
     "builders": [{
         "type": "virtualbox-iso",
+        "vboxmanage": [
+            ["modifyvm","{{.Name}}","--memory","1536"],
+            ["modifyvm","{{.Name}}","--nictype1","virtio"]
+         ],
+        "disk_size": "120000",
         "iso_url": "{{user `url`}}",
         "iso_checksum": "{{user `checksum`}}",
         "iso_checksum_type": "{{user `checksum_type`}}",
