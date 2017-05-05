@@ -1,7 +1,7 @@
 {
     "variables": {
-        "url": "http://download.bring.out.ba/greenbox-4.2.4.iso",
-        "checksum": "752ad28ab457d784feacac82dd303b70b0dc9d0bd649eba4de8fa3c764fed668",
+        "url": "http://download.bring.out.ba/greenbox-4.2.5.iso",
+        "checksum": "b0b37c562963cdb56a9828b9acc29311f1d10148cd022a00ba42e8e9fbcf01b7",
         "checksum_type": "sha256",
         "version": "4.2.3",
         "headless": "true",
