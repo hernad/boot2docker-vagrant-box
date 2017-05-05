@@ -3,20 +3,19 @@ Vagrant.configure("2") do |config|
   config.ssh.username = "docker"
   config.ssh.password = "test01"
 
-  # Disable synced folders because guest additions aren't available
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder ".", "/vagrant", disabled: false
 
   # Expose the Docker port
   config.vm.network "forwarded_port", guest: 2376, host: 2376,
     host_ip: "127.0.0.1", auto_correct: true, id: "docker"
 
-  # b2d doesn't support NFS
+  # greenbox doesn't support NFS
   config.nfs.functional = false
 
-  # b2d doesn't persist filesystem between reboots
-  if config.ssh.respond_to?(:insert_key)
-    config.ssh.insert_key = false
-  end
+  # greenbox doesn't persist filesystem between reboots
+  #if config.ssh.respond_to?(:insert_key)
+  #  config.ssh.insert_key = false
+  #end
 
   # Attach the ISO
   config.vm.provider "virtualbox" do |v|
@@ -31,8 +30,8 @@ Vagrant.configure("2") do |config|
 
     # On VirtualBox, we don't have guest additions or a functional vboxsf
     # in TinyCore Linux, so tell Vagrant that so it can be smarter.
-    v.check_guest_additions = false
-    v.functional_vboxsf     = false
+    v.check_guest_additions = true
+    v.functional_vboxsf     = true
   end
 
 end

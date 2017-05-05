@@ -15,6 +15,8 @@
             ["modifyvm","{{.Name}}","--memory","1024"],
             ["modifyvm","{{.Name}}","--nictype1","virtio"]
          ],
+        "guest_additions_mode": "disable",
+        "virtualbox_version_file": "",
         "disk_size": "120000",
         "iso_url": "{{user `url`}}",
         "iso_checksum": "{{user `checksum`}}",
