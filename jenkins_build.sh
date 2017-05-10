@@ -27,7 +27,8 @@ curl -LO $DOWNLOAD_URL/greenbox-${GREENBOX_VERSION}.iso.sha256sum
 SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum`
 
 chmod +x packer
-./packer build \ 
+
+./packer build \
    -var 'headless=true' \
    -var "url=${DOWNLOAD_URL}/greenbox-$GREENBOX_VERSION.iso" \
    -var "checksum=${SHA256SUM}" \
