@@ -14,8 +14,15 @@ VBoxManage unregistervm ${IMG} --delete
 
 rm -rf "/home/docker/VirtualBox VMs/${IMG}"
 
+curl -LO https://raw.githubusercontent.com/hernad/greenbox/apps_modular/GREENBOX_VERSION
+if [ $? != 0 ] ; then
+  echo "cannot get GREENBOX_VERSION"
+  exit 1
+fi
 
+GREENBOX_VERSION=`cat GREENBOX_VERSION`
+ 
 chmod +x packer
 ./packer build -var 'headless=true' -only=virtualbox-iso template.json
 
-mv ${IMG}_virtualbox.box ${IMG}_$(date +"%Y-%m-%d").box
+mv ${IMG}_virtualbox.box ${IMG}_${GREENBOX_VERSION}.box
