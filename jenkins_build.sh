@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOWNLOAD_URL=http://download.bring.out.ba
+
 if [ ! -f packer.zip ] ; then
   curl -L https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip?_ga=1.155119281.822261056.1493217676 > packer.zip
   unzip packer.zip
@@ -21,9 +23,16 @@ if [ $? != 0 ] ; then
 fi
 
 GREENBOX_VERSION=`cat GREENBOX_VERSION`
- 
+curl -LO $DOWNLOAD_URL/greenbox-${GREENBOX_VERSION}.iso.sha256sum
+SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum`
 
 chmod +x packer
-./packer build -var 'headless=true' -var "version=${GREENBOX_VERSION}" -only=virtualbox-iso template.json
+./packer build \ 
+   -var 'headless=true' \
+   -var "url=${DOWNLOAD_URL}/greenbox-$GREENBOX_VERSION.iso" \
+   -var "checksum=${SHA256SUM}" \
+   -var "version=${GREENBOX_VERSION}" \
+   -only=virtualbox-iso \
+   template.json
 
 mv ${IMG}_virtualbox.box ${IMG}_${GREENBOX_VERSION}.box
