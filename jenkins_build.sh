@@ -22,7 +22,8 @@ fi
 
 GREENBOX_VERSION=`cat GREENBOX_VERSION`
  
+
 chmod +x packer
-./packer build -var 'headless=true' -only=virtualbox-iso template.json
+./packer build -var 'headless=true' -var "version=${GREENBOX_VERSION}" -only=virtualbox-iso template.json
 
 mv ${IMG}_virtualbox.box ${IMG}_${GREENBOX_VERSION}.box
