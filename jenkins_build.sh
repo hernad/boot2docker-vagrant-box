@@ -42,9 +42,8 @@ echo packer vars=$VARS
 
 ./packer inspect template.json
  
-./packer build \
-  $VARS \
-  -only=virtualbox-iso \
-   template.json
+CMD = "./packer build $VARS -only=virtualbox-iso template.json"
+echo $CMD
+eval $CMD
 
 mv ${IMG}_virtualbox.box ${IMG}_${GREENBOX_VERSION}.box
