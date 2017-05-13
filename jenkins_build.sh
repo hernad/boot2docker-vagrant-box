@@ -2,6 +2,11 @@
 
 DOWNLOAD_URL=http://download.bring.out.ba
 
+if ! lsmod | grep -q vboxpci
+   VBOX "host kernel modules not loaded ?!"
+   exit 1
+fi
+
 if [ ! -f packer.zip ] ; then
   curl -L https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip?_ga=1.155119281.822261056.1493217676 > packer.zip
   unzip packer.zip
