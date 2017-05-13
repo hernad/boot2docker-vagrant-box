@@ -26,7 +26,7 @@ if [ $? != 0 ] ; then
   exit 1
 fi
 
-GREENBOX_VERSION=`cat GREENBOX_VERSION`
+GREENBOX_VERSION=`cat GREENBOX_VERSION || sed -e 's/\n//'`
 curl -LO $DOWNLOAD_URL/greenbox-${GREENBOX_VERSION}.iso.sha256sum
 SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum || sed -e 's/\n//'`
 
