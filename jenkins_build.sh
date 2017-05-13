@@ -8,11 +8,15 @@ if [ ! -f packer.zip ] ; then
 fi
 
 IMG=greenbox
-rm -rf packer-${IMG}-virtualbox
-# ako je na silu prosli put prekinuto
-VBoxManage controlvm ${IMG} poweroff
-VBoxManage unregistervm ${IMG} --delete
-VBoxManage unregistervm ${IMG} --delete
+
+if VBoxManage list vms | grep -q ${IMG}
+then
+ rm -rf packer-${IMG}-virtualbox
+ # ako je na silu prosli put prekinuto
+ VBoxManage controlvm ${IMG} poweroff
+ VBoxManage unregistervm ${IMG} --delete
+ VBoxManage unregistervm ${IMG} --delete
+fi
 
 rm -rf "/home/docker/VirtualBox VMs/${IMG}"
 
