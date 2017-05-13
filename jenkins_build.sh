@@ -42,7 +42,7 @@ echo packer vars=$VARS
 
 ./packer inspect template.json
  
-CMD = "./packer build $VARS -only=virtualbox-iso template.json"
+CMD="./packer build $VARS -only=virtualbox-iso template.json"
 echo $CMD
 eval $CMD
 
