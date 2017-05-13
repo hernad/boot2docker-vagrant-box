@@ -6,7 +6,7 @@
         "headless": "false",
         "box_basename": "greenbox",
         "template": "greenbox",
-        "versio": "0"
+        "version": "0"
     },
 
     "builders": [{
