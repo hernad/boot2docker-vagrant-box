@@ -32,11 +32,11 @@ SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum || sed -e 's/\n//'`
 
 chmod +x packer
 
-echo "greenbox version=$GREENBOX_VERSION checksum=$SHA256SUM"
+echo "GREENBOX_VERSION=$GREENBOX_VERSION CHECKSUM=$SHA256SUM"
 
 ./packer build \
    -var 'headless=true' \
-   -var "url=${DOWNLOAD_URL}/greenbox-$GREENBOX_VERSION.iso" \
+   -var "url=${DOWNLOAD_URL}/greenbox-${GREENBOX_VERSION}.iso" \
    -var "checksum=${SHA256SUM}" \
    -var "version=${GREENBOX_VERSION}" \
    -only=virtualbox-iso \
