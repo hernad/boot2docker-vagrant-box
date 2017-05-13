@@ -3,6 +3,7 @@
 DOWNLOAD_URL=http://download.bring.out.ba
 
 if ! lsmod | grep -q vboxpci
+then
    VBOX "host kernel modules not loaded ?!"
    exit 1
 fi
