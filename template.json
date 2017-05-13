@@ -38,7 +38,7 @@
       },
       {
         "type":   "shell",
-         "inline": [ "sudo chown docker:docker -R /home/docker", "sudo zfs list", "echo 'Hello World!'" ]
+         "inline": [ "sudo chown docker:docker -R /home/docker", "sudo zfs list", "ls -l /opt/apps/*" ]
       },
       {
       "type": "shell",
