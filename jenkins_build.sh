@@ -40,7 +40,7 @@ VARS+=" -var 'checksum=${SHA256SUM}' -var 'version=${GREENBOX_VERSION}'"
 
 echo packer vars=$VARS
  
-./packer build \
+./packer -debug build \
   $VARS \
   -only=virtualbox-iso \
    template.json
