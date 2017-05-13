@@ -28,7 +28,7 @@ fi
 
 GREENBOX_VERSION=`cat GREENBOX_VERSION`
 curl -LO $DOWNLOAD_URL/greenbox-${GREENBOX_VERSION}.iso.sha256sum
-SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum`
+SHA256SUM=`cat greenbox-${GREENBOX_VERSION}.iso.sha256sum || sed -e 's/\n//'`
 
 chmod +x packer
 
