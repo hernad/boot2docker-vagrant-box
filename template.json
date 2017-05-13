@@ -1,9 +1,9 @@
 {
     "variables": {
-        "iso_checksum": "0",
-        "iso_url": "",
-        "iso_checksum_type": "sha256",
-        "headless": "true",
+        "checksum": "0",
+        "url": "",
+        "checksum_type": "sha256",
+        "headless": "false",
         "box_basename": "greenbox",
         "template": "greenbox",
         "versio": "0"
@@ -18,9 +18,9 @@
         "guest_additions_mode": "disable",
         "virtualbox_version_file": "",
         "disk_size": "120000",
-        "iso_url": "{{user `iso_url`}}",
-        "iso_checksum": "{{user `iso_checksum`}}",
-        "iso_checksum_type": "{{user `iso_checksum_type`}}",
+        "iso_url": "{{user `url`}}",
+        "iso_checksum": "{{user `checksum`}}",
+        "iso_checksum_type": "{{user `checksum_type`}}",
         "headless" : "{{ user `headless`}}",
         "boot_wait": "2m30s",
         "guest_os_type": "Linux_64",

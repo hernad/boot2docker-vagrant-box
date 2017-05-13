@@ -34,9 +34,9 @@ chmod +x packer
 
 echo "GREENBOX_VERSION=$GREENBOX_VERSION CHECKSUM=$SHA256SUM"
 
-VARS="-var 'headless=true' "
-VARS+=" -var 'iso_url=${DOWNLOAD_URL}/greenbox-${GREENBOX_VERSION}.iso"
-VARS+=" -var 'iso_checksum=${SHA256SUM}' -var 'version=${GREENBOX_VERSION}'"
+VARS=" -var 'headless=true' "
+VARS+=" -var 'url=${DOWNLOAD_URL}/greenbox-${GREENBOX_VERSION}.iso"
+VARS+=" -var 'checksum=${SHA256SUM}' -var 'version=${GREENBOX_VERSION}'"
 
 echo packer vars=$VARS
  
