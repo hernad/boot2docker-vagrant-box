@@ -39,8 +39,10 @@ VARS+=" -var 'url=${DOWNLOAD_URL}/greenbox-${GREENBOX_VERSION}.iso"
 VARS+=" -var 'checksum=${SHA256SUM}' -var 'version=${GREENBOX_VERSION}'"
 
 echo packer vars=$VARS
+
+./packer inspect template.json
  
-./packer build -debug \
+./packer build \
   $VARS \
   -only=virtualbox-iso \
    template.json
