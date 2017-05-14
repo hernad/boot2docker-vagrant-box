@@ -38,7 +38,7 @@
       },
       {
         "type":   "shell",
-         "inline": [ "sudo chown docker:docker -R /home/docker", "sudo zfs list" ]
+         "inline": [ "sudo chown docker:docker -R /home/docker", "sudo zfs list", "ls /opt/apps/green /opt/apps/python2 /opt/apps/docker" ]
       },
       {
       "type": "shell",
