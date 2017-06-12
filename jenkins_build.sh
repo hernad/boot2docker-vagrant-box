@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BRANCH=btrfs
+BRANCH=zfs
 
 DOWNLOAD_URL=http://download.bring.out.ba
 
