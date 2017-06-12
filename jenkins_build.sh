@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BRANCH=btrfs
+
 DOWNLOAD_URL=http://download.bring.out.ba
 
 if ! lsmod | grep -q vboxpci
@@ -26,7 +28,7 @@ fi
 
 rm -rf "/home/docker/VirtualBox VMs/${IMG}"
 
-curl -LO https://raw.githubusercontent.com/hernad/greenbox/apps_modular/GREENBOX_VERSION
+curl -LO https://raw.githubusercontent.com/hernad/greenbox/$BRANCH/GREENBOX_VERSION
 if [ $? != 0 ] ; then
   echo "cannot get GREENBOX_VERSION"
   exit 1
